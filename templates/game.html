@@ -1,0 +1,115 @@
+{% extends 'home.html' %}
+
+{% block content %}
+<div class="clear1"></div>
+
+<div class="grid-container">
+    <div class="item1_dealer_text">
+        <h2>
+            Dealer: 
+        
+            {% if dealer_hand_value == '100' %}
+                5 Card Trick !!!
+            {% elif dealer_hand_value == '0' and player_hand_value != '0' %}
+                Bust !!!
+            {% elif dealer_hand_value == '0' and player_hand_value == '0' %}
+
+            {% else %}
+                {{ dealer_hand_value }} points
+            {% endif %}
+        </h2>
+    </div>
+    <div class="item2_player_text">
+        <h2>
+            Player: 
+            {% if player_hand_value == '100' %}
+                5 Card Trick !!!
+            {% elif player_hand_value == '0' %}
+                Bust !!!
+            {% else %}
+                {{ player_hand_value }} points
+            {% endif %}
+        </h2>
+    </div>
+    <div class="item3_dealer_cards">        
+        {% for d_card in dealer_hand %}
+        <picture>
+            <source media="(orientation: landscape) and (max-width: 900px)" srcset="{{ url_for('static', filename='svg/small/' + d_card +'-small.svg') }}"> 
+            <source media="(orientation: portrait) and (max-width: 700px)" srcset="{{ url_for('static', filename='svg/small/' + d_card +'-small.svg') }}">
+            <img src="{{ url_for('static', filename='svg/' + d_card +'.svg') }}">
+        </picture>
+        {% endfor %}
+    </div>        
+    <div class="item4_player_cards">
+        {% for p_card in player_hand|reverse %}
+        <picture>
+            <source media="(orientation: landscape) and (max-width: 900px)" srcset="{{ url_for('static', filename='svg/small/' + p_card +'-small.svg') }}"> 
+            <img src="{{ url_for('static', filename='svg/' + p_card +'.svg') }}">
+        </picture> 
+        {% endfor %}
+    </div>            
+    <div class="item4_player_cards_portrait">
+        {% for p_card in player_hand %}
+        <picture>
+            <source media="(orientation: portrait) and (max-width: 700px)" srcset="{{ url_for('static', filename='svg/small/' + p_card +'-small.svg') }}"> 
+            <img src="{{ url_for('static', filename='svg/' + p_card +'.svg') }}">
+        </picture> 
+        {% endfor %}
+    </div>
+    <div class="item5_buttons">
+    
+        
+        <form method="post" action="/" style=vertical>
+            <button type="submit" name="start_new_game" value="start_new_game" class="btn btn-dark">New Game</button>
+            <button type="submit" name="hit" value="hit" class="btn btn-dark">Hit</button>
+            <button type="submit" name="stick" value="stick" class="btn btn-dark">Stick</button>
+            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal">How To Play</button>
+        </form>
+        
+        
+        <div class="modal" id="myModal" data-backdrop="false">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Rules:</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        This is a simplified version of casino Blackjack.<br></br>
+                        The player and the dealer start with a hand of 2 cards.<br>
+                        The aim for the player is to finish with either a higher score than the dealer that is not above 21 or beat the dealers score with a non busted hand of 5 cards, a "5 Card Trick".<br></br>
+                        The player draws additional cards infront of the dealer and therefore has a higher chance of busting out first.<br></br>
+                        The player can choose to "Hit" (draw another card) or "Stick" (declare that you don't want any further cards in this round).<br>
+                        If the player "Sticks" before the dealer does, the dealer may continue to draw further cards until either bust or has a higher score than the player.
+                    </div>
+             
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="item6_next_move_text">
+        <h3>{{ next_move_text }}</h3>
+    </div>
+    
+    
+    <div class="item7_github_link">
+        <a href="https://github.com/richardmalpas/blackjack_webapp">
+            <img src="{{ url_for('static', filename='png/Git-Logo.png') }}" style="width:70%">
+        </a>
+    </div>   
+    <div class="item7_github_link_portrait">
+        <a href="https://github.com/richardmalpas/blackjack_webapp">
+                <img src="{{ url_for('static', filename='png/Git-Logo-Small.png') }}" style="width:150%">
+        </a>
+    </div>   
+</div>
+{% endblock %}

@@ -1,0 +1,377 @@
+.wrapper{background: url('/static/blackjack_background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  height: 100vh;
+  opacity: 0.85;
+
+}
+
+
+
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-row-gap: 20px;
+  justify-items: center;
+}
+
+
+
+.item1_dealer_text {
+  justify-self: start;
+  height: 50px;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  grid-column-start: 2;
+  grid-column-end: 13;
+}
+
+.item2_player_text {
+  justify-self: end;
+  height: 50px;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  grid-column-start: 12;
+  grid-column-end: 1;
+}
+
+
+.item3_dealer_cards {
+  justify-self: start;
+  grid-row-start: 2;
+  grid-row-end: 2;
+  grid-column-start: 2;
+  grid-column-end: 13;
+}
+
+.item4_player_cards {
+  visibility: visible;
+  justify-self: end;
+  height: 100px;
+  grid-row-start: 2;
+  grid-row-end: 2;
+  grid-column-start: 12;
+  grid-column-end: 1;
+}
+
+.item4_player_cards_portrait{
+  visibility: hidden;
+  justify-self: start;
+  height: 0px;
+  grid-row-start: 2;
+  grid-row-end: 2;
+  grid-column-start: 2;
+  grid-column-end: 13;
+
+}
+
+.item5_buttons {
+  height: 100px;
+  grid-row-start: 3;
+  grid-row-end: 3;
+  grid-column-start: 1;
+  grid-column-end: 13;
+}
+
+.item6_next_move_text {
+  grid-row-start: 4;
+  grid-row-end: 4;
+  grid-column-start: 5;
+  grid-column-end: 9;
+}
+
+
+.item7_github_link {
+  visibility: visible;
+  justify-self: end;
+  grid-row-start: 4;
+  grid-row-end: 4;
+  grid-column-start: 11;
+  grid-column-end: 12;
+}
+
+
+.item7_github_link_portrait {
+  visibility: hidden;
+  grid-row-start: 6;
+  grid-row-end: 6;
+  grid-column-start: 10;
+  grid-column-end: 10;
+}
+
+
+
+h1 {
+  color: white;
+
+  text-shadow: 5px 5px 15px black;
+}
+
+h2 {
+  color: white;
+  text-shadow: 2px 2px 5px black;
+}
+
+h3 {
+  color: white;
+  text-shadow: 2px 2px 5px black;
+}
+
+
+.clear, .clear1, .clear2, .clear3, .clear5 {
+  clear: both;
+  font-size: 0;
+  line-height: 0; 
+}
+
+.clear {height: 0px;}
+.clear1 {height: 0px;}
+.clear2 {height: 0px;}
+.clear3 {height: 0px;}
+.clear5 {height: 0px;}
+
+
+.modal-body {
+    font-size: 1em;
+}
+
+.btn-dark {
+    width: 1;
+}
+
+
+
+
+@media only screen and (min-width: 901px) {
+  h1 {
+    font-size: 2.5em;
+  }
+  h2 {
+    font-size: 2em;
+  }
+  h3 {
+    font-size: 1.7em;
+  }
+  .clear1 {height: 60px;
+  }
+  .clear2 {height: 0px;
+  }
+  .clear3 {height: 80px;
+  }
+  .clear5 {height: 120px;
+  }
+
+  .item1_dealer_text {
+    height: 80px
+  }
+  
+  .item2_player_text {
+    height: 80px;
+  }
+  
+  
+  .item3_dealer_cards {
+    height: 300px
+  }
+  
+  .item4_player_cards {
+    height: 300px;
+  }
+}
+
+
+@media only screen and (max-width: 700px) and (orientation: portrait) {
+  h1 {
+    font-size: 1.3em;
+  }
+  h2 {
+    font-size: 1.1em;
+  }
+  h3 {
+    font-size: 1.1em;
+  }
+  .clear1 {height: 40px;
+  }
+  .clear2 {height: 0px;
+  }
+  .clear3 {height: 0px;
+  }
+  .clear5 {height: 0px;
+  }
+  .modal-body {font-size: 0.8em;
+  }
+  .btn-dark {width: 0.3;
+  }
+  
+
+  .grid-container { 
+    
+    grid-row-gap: 5px;
+  }
+  .item1_dealer_text{
+    height: 30px;
+
+  } 
+
+  .item3_dealer_cards {
+    height: 120px
+  }
+
+  .item2_player_text {
+    justify-self: start;
+    height: 30px;
+    grid-row-start: 3;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 13;
+  }
+
+  .item4_player_cards {
+    visibility: hidden;
+    height: 0px;
+  }
+
+  .item4_player_cards_portrait {
+    visibility: visible;
+    justify-self: start;
+    height: 150px;
+    grid-row-start: 4;
+    grid-row-end: 4;
+    grid-column-start: 2;
+    grid-column-end: 13;
+  }
+  
+  
+  .item5_buttons {
+    height: 60px;
+    grid-row-start: 5;
+    grid-row-end: 5;
+    grid-column-start: 1;
+    grid-column-end: 13;
+  }
+  
+  .item6_next_move_text {
+    grid-row-start: 6;
+    grid-row-end: 6;
+    grid-column-start: 5;
+    grid-column-end: 9;
+  }
+  
+  
+  .item7_github_link {
+    visibility: hidden;
+    grid-row-start: 6;
+    grid-row-end: 6;
+    grid-column-start: 10;
+    grid-column-end: 10;
+  }
+
+  .item7_github_link_portrait {
+    visibility: visible;
+    grid-row-start: 6;
+    grid-row-end: 6;
+    grid-column-start: 10;
+    grid-column-end: 10;
+  }
+  
+}
+
+
+@media only screen and (max-width: 900px) and (orientation: landscape) {
+  h1 {
+    font-size: 1.5em;
+  }
+  h2 {
+    font-size: 1.3em;
+  }
+  h3 {
+    font-size: 1.3em;
+  }
+  .clear1 {height: 10px;
+  }
+  .clear2 {height: 0px;
+  }
+  .clear3 {height: 0px;
+  }
+  .clear5 {height: 0px;
+  }
+  .modal-body {font-size: 0.65em;
+  }
+  .btn-dark {width: 0.3;
+  }
+
+  .grid-container { 
+    grid-row-gap: 5px;
+    
+    
+  }
+
+
+  .item1_dealer_text {
+    justify-self: start;
+    height: 30px;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    grid-column-start: 2;
+    grid-column-end: 13;
+  }
+  
+  .item2_player_text {
+    justify-self: end;
+    height: 30px;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    grid-column-start: 12;
+    grid-column-end: 1;
+  }
+  
+  
+  .item3_dealer_cards {
+    justify-self: start;
+    height: 95px;
+    grid-row-start: 2;
+    grid-row-end: 2;
+    grid-column-start: 13;
+    grid-column-end: 2;
+  }
+  
+  .item4_player_cards {
+    justify-self: end;
+    height: 95px;
+    grid-row-start: 2;
+    grid-row-end: 2;
+    grid-column-start: 12;
+    grid-column-end: 1;
+  }
+  
+  
+  .item5_buttons {
+    height: 40px;
+    grid-row-start: 3;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 13;
+  }
+  
+  .item6_next_move_text {
+    grid-row-start: 4;
+    grid-row-end: 4;
+    grid-column-start: 5;
+    grid-column-end: 9;
+  }
+  
+  
+  .item7_github_link {
+    justify-self: center;
+    grid-row-start: 4;
+    grid-row-end: 4;
+    grid-column-start: 11;
+    grid-column-end: 11;
+  }
+}
+
+
+
